@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Fees Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>College Fees Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="fees.html">Fee Structure</a></li>
+                <li><a href="payments.html">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to College Fees Management</h2>
+            <p>Efficiently manage student fees, track payments, and maintain records.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Student Management</h3>
+                <p>Register and manage student information</p>
+                <a href="students.html" class="btn">Manage Students</a>
+            </div>
+            <div class="feature-card">
+                <h3>Fee Structure</h3>
+                <p>Set up and manage fee categories</p>
+                <a href="fees.html" class="btn">Setup Fees</a>
+            </div>
+            <div class="feature-card">
+                <h3>Payment Tracking</h3>
+                <p>Record and track student payments</p>
+                <a href="payments.html" class="btn">Track Payments</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <h3>System Overview</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Students</h4>
+                    <span id="totalStudents">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Total Fees Collected</h4>
+                    <span id="totalCollected">₹0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Pending Payments</h4>
+                    <span id="pendingPayments">₹0</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 College Fees Management System. Mini Project</p>
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

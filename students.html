@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - College Fees Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>College Fees Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html" class="active">Students</a></li>
+                <li><a href="fees.html">Fee Structure</a></li>
+                <li><a href="payments.html">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Student Management</h2>
+
+        <div class="form-container">
+            <h3>Add New Student</h3>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input type="email" id="studentEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentPhone">Phone</label>
+                    <input type="tel" id="studentPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentCourse">Course</label>
+                    <select id="studentCourse" required>
+                        <option value="">Select Course</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Business Administration">Business Administration</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="studentYear">Year</label>
+                    <select id="studentYear" required>
+                        <option value="">Select Year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Add Student</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h3>Student List</h3>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student rows will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Edit Student Modal -->
+    <div id="editStudentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Student</h3>
+            <form id="editStudentForm">
+                <input type="hidden" id="editStudentId">
+                <div class="form-group">
+                    <label for="editStudentName">Full Name</label>
+                    <input type="text" id="editStudentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editStudentEmail">Email</label>
+                    <input type="email" id="editStudentEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="editStudentPhone">Phone</label>
+                    <input type="tel" id="editStudentPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="editStudentCourse">Course</label>
+                    <select id="editStudentCourse" required>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Business Administration">Business Administration</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editStudentYear">Year</label>
+                    <select id="editStudentYear" required>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Update Student</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Fees Management System. Mini Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="students.js"></script>
+</body>
+</html>

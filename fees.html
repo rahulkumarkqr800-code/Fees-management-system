@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure - College Fees Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>College Fees Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="fees.html" class="active">Fee Structure</a></li>
+                <li><a href="payments.html">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Fee Structure Management</h2>
+
+        <div class="form-container">
+            <h3>Add Fee Category</h3>
+            <form id="feeForm">
+                <div class="form-group">
+                    <label for="feeName">Fee Name</label>
+                    <input type="text" id="feeName" placeholder="e.g., Tuition Fee, Library Fee" required>
+                </div>
+                <div class="form-group">
+                    <label for="feeAmount">Amount (₹)</label>
+                    <input type="number" id="feeAmount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="feeType">Fee Type</label>
+                    <select id="feeType" required>
+                        <option value="">Select Type</option>
+                        <option value="annual">Annual</option>
+                        <option value="semester">Per Semester</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="one-time">One-time</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="feeDescription">Description</label>
+                    <textarea id="feeDescription" placeholder="Optional description"></textarea>
+                </div>
+                <button type="submit" class="btn">Add Fee Category</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h3>Fee Categories</h3>
+            <table id="feesTable">
+                <thead>
+                    <tr>
+                        <th>Fee Name</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fee rows will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h3>Student Fee Assignments</h3>
+            <form id="assignFeeForm">
+                <div class="form-group">
+                    <label for="assignStudent">Select Student</label>
+                    <select id="assignStudent" required>
+                        <option value="">Choose Student</option>
+                        <!-- Students will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="assignFee">Select Fee Category</label>
+                    <select id="assignFee" required>
+                        <option value="">Choose Fee</option>
+                        <!-- Fees will be populated here -->
+                    </select>
+                </div>
+                <button type="submit" class="btn">Assign Fee to Student</button>
+            </form>
+
+            <table id="studentFeesTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Fee Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student fee assignments will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Edit Fee Modal -->
+    <div id="editFeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Fee Category</h3>
+            <form id="editFeeForm">
+                <input type="hidden" id="editFeeId">
+                <div class="form-group">
+                    <label for="editFeeName">Fee Name</label>
+                    <input type="text" id="editFeeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editFeeAmount">Amount (₹)</label>
+                    <input type="number" id="editFeeAmount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="editFeeType">Fee Type</label>
+                    <select id="editFeeType" required>
+                        <option value="annual">Annual</option>
+                        <option value="semester">Per Semester</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="one-time">One-time</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editFeeDescription">Description</label>
+                    <textarea id="editFeeDescription"></textarea>
+                </div>
+                <button type="submit" class="btn">Update Fee Category</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Fees Management System. Mini Project</p>
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+    <script src="fees.js"></script>
+</body>
+</html>

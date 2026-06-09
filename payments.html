@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Tracking - College Fees Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>College Fees Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="fees.html">Fee Structure</a></li>
+                <li><a href="payments.html" class="active">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Payment Tracking</h2>
+
+        <div class="form-container">
+            <h3>Record Payment</h3>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="paymentStudent">Select Student</label>
+                    <select id="paymentStudent" required>
+                        <option value="">Choose Student</option>
+                        <!-- Students will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="paymentFee">Select Fee Category</label>
+                    <select id="paymentFee" required>
+                        <option value="">Choose Fee</option>
+                        <!-- Fees will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="paymentAmount">Payment Amount (₹)</label>
+                    <input type="number" id="paymentAmount" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentDate">Payment Date</label>
+                    <input type="date" id="paymentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" required>
+                        <option value="">Select Method</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                        <option value="online">Online Transfer</option>
+                        <option value="cheque">Cheque</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="paymentNotes">Notes</label>
+                    <textarea id="paymentNotes" placeholder="Optional notes"></textarea>
+                </div>
+                <button type="submit" class="btn">Record Payment</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h3>Payment History</h3>
+            <table id="paymentsTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Fee Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Payment rows will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h3>Outstanding Fees</h3>
+            <table id="outstandingFeesTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Fee Category</th>
+                        <th>Amount Due</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Outstanding fees will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 College Fees Management System. Mini Project</p>
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+    <script src="payments.js"></script>
+</body>
+</html>
